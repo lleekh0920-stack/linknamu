@@ -18,7 +18,7 @@ export const profile: Profile = {
   imageUrl: "/profile.jpg",
   links: [
     { id: "github", title: "GitHub", url: "https://github.com" },
-    { id: "blog", title: "Blog", url: "https://example.com" },
-    { id: "instagram", title: "Instagram", url: "https://www.instagram.com" },
+    { id: "blog", title: "블로그", url: "https://blog.naver.com/leekh0920" },
+    { id: "instagram", title: "Instagram", url: "https://www.instagram.com/l.kangh" },
   ],
 };

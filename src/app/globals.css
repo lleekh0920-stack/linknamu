@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff8f1;
+  --foreground: #2b211c;
+  --muted: #7a675c;
+
+  /* 크림 → 연한 살구 그라데이션 + 은은한 색 번짐 */
+  --bg-gradient:
+    radial-gradient(60% 45% at 85% 5%, rgb(255 205 170 / 0.55), transparent 70%),
+    radial-gradient(55% 40% at 10% 95%, rgb(255 190 160 / 0.4), transparent 70%),
+    linear-gradient(170deg, #fffaf3 0%, #fff1e4 45%, #fde2cc 100%);
+
+  --glass-bg: rgb(255 255 255 / 0.45);
+  --glass-bg-hover: rgb(255 255 255 / 0.65);
+  --glass-border: rgb(255 255 255 / 0.7);
+  --glass-shadow: 0 6px 24px -10px rgb(150 85 45 / 0.25);
+  --glass-shadow-hover: 0 10px 30px -12px rgb(150 85 45 / 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1d1612;
+    --foreground: #f5ebe3;
+    --muted: #b8a497;
+
+    --bg-gradient:
+      radial-gradient(60% 45% at 85% 5%, rgb(190 110 70 / 0.25), transparent 70%),
+      radial-gradient(55% 40% at 10% 95%, rgb(170 90 70 / 0.2), transparent 70%),
+      linear-gradient(170deg, #1a1411 0%, #221812 50%, #2c1c14 100%);
+
+    --glass-bg: rgb(255 255 255 / 0.06);
+    --glass-bg-hover: rgb(255 255 255 / 0.1);
+    --glass-border: rgb(255 255 255 / 0.12);
+    --glass-shadow: 0 6px 24px -10px rgb(0 0 0 / 0.5);
+    --glass-shadow-hover: 0 10px 30px -12px rgb(0 0 0 / 0.6);
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --font-sans: var(--font-pretendard), system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* 모바일에서 background-attachment: fixed가 불안정해 고정 레이어로 깔아 둠 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--bg-gradient);
 }
