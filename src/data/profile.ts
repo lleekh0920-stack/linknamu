@@ -17,8 +17,8 @@ export const profile: Profile = {
   bio: "풀스택 개발자 | AI로 아이디어를 실체화 하고 싶어요",
   imageUrl: "/profile.jpg",
   links: [
-    { id: "github", title: "GitHub", url: "https://github.com" },
+    { id: "github", title: "GitHub", url: "https://github.com/lleekh0920-stack" },
     { id: "blog", title: "블로그", url: "https://blog.naver.com/leekh0920" },
-    { id: "instagram", title: "Instagram", url: "https://www.instagram.com/l.kangh" },
+    { id: "instagram", title: "Instagram", url: "https://www.instagram.com/ieexugi" },
   ],
 };
